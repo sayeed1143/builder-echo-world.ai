@@ -30,6 +30,7 @@ export function MainLayout() {
 function BackgroundAurora() {
   return (
     <div className="pointer-events-none absolute inset-0">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,252,255,0.18),_transparent_60%),_radial-gradient(circle_at_bottom,_rgba(112,66,248,0.16),_transparent_55%)] opacity-70 dark:opacity-80" />
       <motion.div
         initial={{ opacity: 0.4 }}
         animate={{ opacity: 0.7 }}
