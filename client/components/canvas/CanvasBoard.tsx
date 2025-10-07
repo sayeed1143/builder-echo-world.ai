@@ -57,7 +57,10 @@ type AiNodeData = {
 };
 
 function AiNode({ data }: NodeProps<AiNodeData>) {
-  const mediaIcons: Record<NonNullable<AiNodeData["media"]>, React.ReactNode> = {
+  const mediaIcons: Record<
+    NonNullable<AiNodeData["media"]>,
+    React.ReactNode
+  > = {
     pdf: <FileText className="h-4 w-4" />,
     image: <ImageIcon className="h-4 w-4" />,
     video: <Youtube className="h-4 w-4" />,
@@ -277,14 +280,11 @@ export function CanvasBoard() {
     [],
   );
 
-  const targetForMode = useCallback(
-    (mode: StudyMode) => {
-      if (mode === "InfiniteMockAI") return "mock";
-      if (mode === "DoubtBusterAI") return "doubt";
-      return "canvas";
-    },
-    [],
-  );
+  const targetForMode = useCallback((mode: StudyMode) => {
+    if (mode === "InfiniteMockAI") return "mock";
+    if (mode === "DoubtBusterAI") return "doubt";
+    return "canvas";
+  }, []);
 
   const pickNear = useCallback(
     (base: { x: number; y: number }) => ({
@@ -313,8 +313,8 @@ export function CanvasBoard() {
             (activeMode === "DoubtBusterAI"
               ? "from-pink-400/80 via-fuchsia-500/70 to-purple-500/60"
               : activeMode === "InfiniteMockAI"
-              ? "from-teal-400/80 via-emerald-400/70 to-cyan-400/60"
-              : "from-cyan-300/80 via-sky-400/80 to-blue-500/70"),
+                ? "from-teal-400/80 via-emerald-400/70 to-cyan-400/60"
+                : "from-cyan-300/80 via-sky-400/80 to-blue-500/70"),
           media: data.media ?? "text",
           url: data.url,
         },
@@ -385,12 +385,17 @@ export function CanvasBoard() {
     (files: FileList | null) => {
       if (!files || files.length === 0) return;
       Array.from(files).forEach((file) => {
-        const isPdf = /pdf$/i.test(file.type) || file.name.toLowerCase().endsWith(".pdf");
+        const isPdf =
+          /pdf$/i.test(file.type) || file.name.toLowerCase().endsWith(".pdf");
         const isImage = /^image\//i.test(file.type);
         const url = URL.createObjectURL(file);
         addNodeWithEdges({
           title: file.name,
-          subtitle: isPdf ? "PDF attached" : isImage ? "Image attached" : "File attached",
+          subtitle: isPdf
+            ? "PDF attached"
+            : isImage
+              ? "Image attached"
+              : "File attached",
           tag: "Upload",
           media: isPdf ? "pdf" : isImage ? "image" : "text",
           url,
@@ -427,7 +432,15 @@ export function CanvasBoard() {
         window.print();
       }
     },
-    [activeMode, addSession, edges, nodes, setEdges, setNodes, setToolbarAction],
+    [
+      activeMode,
+      addSession,
+      edges,
+      nodes,
+      setEdges,
+      setNodes,
+      setToolbarAction,
+    ],
   );
 
   return (
