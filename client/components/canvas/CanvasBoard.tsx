@@ -264,7 +264,7 @@ export function CanvasBoard() {
   );
 
   return (
-    <div className="relative flex h-[700px] w-full flex-col overflow-hidden rounded-[2.25rem] border border-white/10 bg-white/5 shadow-[0_45px_120px_rgba(59,252,255,0.19)] backdrop-blur-3xl dark:border-cyan-500/25 dark:bg-slate-950/60">
+    <div className="relative flex h-[700px] w-full flex-col overflow-hidden rounded-[2.25rem] border border-white/40 bg-white/80 text-slate-900 shadow-[0_45px_120px_rgba(59,252,255,0.19)] backdrop-blur-3xl dark:border-cyan-500/25 dark:bg-slate-950/60 dark:text-cyan-50">
       <Toolbar toolbarIcons={toolbarIcons} />
       <div className="relative flex-1">
         <ReactFlow
