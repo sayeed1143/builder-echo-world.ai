@@ -198,7 +198,7 @@ function AiNode({ data }: NodeProps<AiNodeData>) {
       initial={{ opacity: 0, scale: 0.85, y: 18 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.45, delay: data.delay ?? 0 }}
-      className="relative max-w-sm rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur-2xl dark:border-cyan-500/25 dark:bg-slate-900/50"
+      className="relative max-w-sm rounded-3xl border border-white/30 bg-white/80 p-6 text-slate-900 backdrop-blur-2xl dark:border-cyan-500/25 dark:bg-slate-900/50 dark:text-cyan-50"
     >
       <span
         aria-hidden
@@ -209,18 +209,18 @@ function AiNode({ data }: NodeProps<AiNodeData>) {
         }}
       />
       <div className="relative z-10 space-y-3">
-        <div className="flex items-center justify-between text-xs uppercase tracking-[0.35em] text-cyan-100/80">
+        <div className="flex items-center justify-between text-xs uppercase tracking-[0.35em] text-cyan-700/70 dark:text-cyan-100/80">
           <span>{data.tag}</span>
           {Icon ? (
-            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white shadow-[0_0_15px_rgba(59,252,255,0.3)]">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/30 bg-white/70 text-slate-900 shadow-[0_0_15px_rgba(59,252,255,0.3)] dark:border-white/20 dark:bg-white/10 dark:text-white">
               {Icon}
             </span>
           ) : null}
         </div>
-        <p className="text-lg font-semibold leading-tight text-white drop-shadow-[0_0_30px_rgba(59,252,255,0.3)]">
+        <p className="text-lg font-semibold leading-tight text-slate-900 drop-shadow-[0_0_30px_rgba(59,252,255,0.3)] dark:text-white">
           {data.title}
         </p>
-        <p className="text-sm text-cyan-100/80">{data.subtitle}</p>
+        <p className="text-sm text-cyan-800/75 dark:text-cyan-100/80">{data.subtitle}</p>
       </div>
     </motion.div>
   );
