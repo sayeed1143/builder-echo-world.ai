@@ -28,7 +28,11 @@ export default function ChatArea() {
     setTimeout(() => {
       setMessages((m) => [
         ...m,
-        { id: Date.now() + 1, text: `Bot: I received \"${trimmed}\"`, from: "bot" },
+        {
+          id: Date.now() + 1,
+          text: `Bot: I received \"${trimmed}\"`,
+          from: "bot",
+        },
       ]);
     }, 600);
   }
@@ -45,16 +49,22 @@ export default function ChatArea() {
       >
         <div className="flex flex-col gap-3">
           {messages.length === 0 ? (
-            <p className="text-sm text-muted-foreground">No messages yet. Say hello!</p>
+            <p className="text-sm text-muted-foreground">
+              No messages yet. Say hello!
+            </p>
           ) : (
             messages.map((m) => (
               <div
                 key={m.id}
-                className={`max-w-[80%] rounded-lg px-4 py-2 text-sm ${{
-                  user: "self-end bg-cyan-500/20 text-white",
-                  bot: "bg-slate-900/10 text-white/90",
-                }[m.from]}`}
-                style={{ alignSelf: m.from === "user" ? "flex-end" : "flex-start" }}
+                className={`max-w-[80%] rounded-lg px-4 py-2 text-sm ${
+                  {
+                    user: "self-end bg-cyan-500/20 text-white",
+                    bot: "bg-slate-900/10 text-white/90",
+                  }[m.from]
+                }`}
+                style={{
+                  alignSelf: m.from === "user" ? "flex-end" : "flex-start",
+                }}
               >
                 {m.text}
               </div>
