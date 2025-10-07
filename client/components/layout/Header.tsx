@@ -9,7 +9,7 @@ export function Header() {
   const { role, setRole } = useAppStore();
 
   return (
-    <header className="relative flex items-center justify-between gap-6 rounded-3xl border border-white/10 bg-white/15 px-6 py-4 shadow-[0_20px_70px_rgba(25,200,245,0.25)] backdrop-blur-2xl dark:border-cyan-500/25 dark:bg-cyan-500/10">
+    <header className="relative flex items-center justify-between gap-6 rounded-3xl border border-white/40 bg-white/70 px-6 py-4 text-slate-900 shadow-[0_20px_70px_rgba(25,200,245,0.25)] backdrop-blur-2xl dark:border-cyan-500/25 dark:bg-cyan-500/10 dark:text-cyan-50">
       <div className="flex items-center gap-4">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -25,7 +25,7 @@ export function Header() {
             <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-500/80">
               Shunya AI
             </p>
-            <h1 className="text-2xl font-bold text-white drop-shadow-[0_0_30px_rgba(59,252,255,0.35)] dark:text-cyan-50 lg:text-3xl">
+            <h1 className="text-2xl font-bold text-slate-900 drop-shadow-[0_0_30px_rgba(59,252,255,0.35)] dark:text-cyan-50 lg:text-3xl">
               The Beginning of Infinite Intelligence
             </h1>
           </div>
@@ -47,7 +47,7 @@ type RoleSelectorProps = {
 
 function RoleSelector({ selectedRole, onSelect }: RoleSelectorProps) {
   return (
-    <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/10 p-1 backdrop-blur-xl dark:border-cyan-500/30 dark:bg-cyan-500/10">
+    <div className="flex items-center gap-2 rounded-full border border-white/40 bg-white/70 p-1 backdrop-blur-xl dark:border-cyan-500/30 dark:bg-cyan-500/10">
       {roles.map((role) => {
         const isActive = role === selectedRole;
         return (
@@ -56,7 +56,7 @@ function RoleSelector({ selectedRole, onSelect }: RoleSelectorProps) {
             type="button"
             onClick={() => onSelect(role)}
             whileTap={{ scale: 0.96 }}
-            className="relative overflow-hidden rounded-full px-4 py-2 text-sm font-semibold uppercase tracking-wide text-white"
+            className="relative overflow-hidden rounded-full px-4 py-2 text-sm font-semibold uppercase tracking-wide text-slate-900 dark:text-white"
           >
             <motion.span
               aria-hidden
