@@ -317,7 +317,7 @@ function Toolbar({
 }) {
   const { toolbarAction, setToolbarAction } = useAppStore();
   return (
-    <div className="flex flex-wrap items-center gap-2 border-b border-white/10 bg-white/5 px-6 py-4 text-xs font-semibold uppercase tracking-[0.35em] text-cyan-100/80 backdrop-blur-2xl dark:border-cyan-500/25 dark:bg-slate-900/50">
+    <div className="flex flex-wrap items-center gap-2 border-b border-white/40 bg-white/80 px-6 py-4 text-xs font-semibold uppercase tracking-[0.35em] text-cyan-700/80 backdrop-blur-2xl dark:border-cyan-500/25 dark:bg-slate-900/50 dark:text-cyan-100/80">
       {toolbarActions.map((action) => (
         <motion.button
           key={action}
