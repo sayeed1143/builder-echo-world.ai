@@ -6,7 +6,7 @@ import { Sidebar } from "@/components/layout/Sidebar";
 
 export function MainLayout() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(59,252,255,0.18),_transparent_60%),_radial-gradient(circle_at_bottom,_rgba(112,66,248,0.2),_transparent_55%)] bg-slate-950 text-white">
+    <div className="relative min-h-screen overflow-hidden bg-background text-foreground transition-colors duration-500">
       <BackgroundAurora />
       <div className="relative z-10 mx-auto flex min-h-screen max-w-[1440px] flex-col gap-6 px-4 py-8 sm:px-6 lg:px-10">
         <Header />
@@ -16,7 +16,7 @@ export function MainLayout() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex-1 rounded-3xl border border-white/10 bg-white/10 p-4 shadow-[0_35px_80px_rgba(59,252,255,0.15)] backdrop-blur-3xl sm:p-6"
+            className="flex-1 rounded-3xl border border-white/40 bg-white/70 p-4 shadow-[0_35px_80px_rgba(59,252,255,0.15)] backdrop-blur-3xl sm:p-6 dark:border-cyan-500/25 dark:bg-white/5"
           >
             <Outlet />
           </motion.main>
