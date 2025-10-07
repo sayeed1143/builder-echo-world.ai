@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { Logo } from "@/components/ui/logo";
 import { useAppStore, type Role } from "@/store/useAppStore";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -18,7 +18,7 @@ export function Header() {
           className="relative flex items-center gap-3"
         >
           <span className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-cyan-200/40 bg-gradient-to-br from-cyan-200/60 via-white/30 to-transparent shadow-[0_0_35px_rgba(59,252,255,0.35)] dark:border-cyan-400/40 dark:from-cyan-500/40 dark:via-cyan-600/20">
-            <Sparkles className="h-7 w-7 text-cyan-900 dark:text-cyan-100" />
+            <Logo className="h-7 w-7" />
             <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.55)_0%,_transparent_65%)]" />
           </span>
           <div className="space-y-1.5">
