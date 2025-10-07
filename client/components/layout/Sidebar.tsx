@@ -127,7 +127,7 @@ export function Sidebar() {
   const { activeMode, setActiveMode, role, sessions } = useAppStore();
 
   return (
-    <aside className="relative flex h-full w-80 min-w-[18rem] flex-col gap-6 rounded-3xl border border-white/10 bg-white/10 p-5 shadow-[0_25px_60px_rgba(59,252,255,0.18)] backdrop-blur-3xl dark:border-cyan-500/25 dark:bg-cyan-950/30">
+    <aside className="relative flex h-full w-full flex-col gap-6 rounded-3xl border border-white/10 bg-white/10 p-5 shadow-[0_25px_60px_rgba(59,252,255,0.18)] backdrop-blur-3xl dark:border-cyan-500/25 dark:bg-cyan-950/30 lg:w-80 lg:min-w-[18rem]">
       <div className="space-y-3">
         <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.4em] text-cyan-200/70">
           <span>Role Mode Shortcuts</span>
