@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import ReactFlow, {
   Background,
   Controls,
@@ -247,6 +247,11 @@ export function CanvasBoard() {
   const addSession = useAppStore((s) => s.addSession);
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleConnect: OnConnect = (params) =>
     setEdges((eds) =>
@@ -320,43 +325,38 @@ export function CanvasBoard() {
         },
       };
       setNodes((nds) => nds.concat(node));
-      setEdges((eds) =>
-        eds
-          .concat(
-            addEdge(
-              {
-                id: `${id}-from-student`,
-                source: "student",
-                target: id,
-                type: "smoothstep",
-                animated: true,
-                style: {
-                  stroke: "url(#gradient-dynamic)",
-                  strokeWidth: 2.2,
-                  filter: "drop-shadow(0 0 6px rgba(59,252,255,0.45))",
-                },
-              },
-              eds,
-            ),
-          )
-          .concat(
-            addEdge(
-              {
-                id: `${id}-to-target`,
-                source: id,
-                target: target,
-                type: "smoothstep",
-                animated: true,
-                style: {
-                  stroke: "url(#gradient-dynamic)",
-                  strokeWidth: 2.2,
-                  filter: "drop-shadow(0 0 6px rgba(59,252,255,0.45))",
-                },
-              },
-              [],
-            ),
-          ),
-      );
+      setEdges((eds) => {
+        const withFirstEdge = addEdge(
+          {
+            id: `${id}-from-student`,
+            source: "student",
+            target: id,
+            type: "smoothstep",
+            animated: true,
+            style: {
+              stroke: "url(#gradient-dynamic)",
+              strokeWidth: 2.2,
+              filter: "drop-shadow(0 0 6px rgba(59,252,255,0.45))",
+            },
+          },
+          eds,
+        );
+        return addEdge(
+          {
+            id: `${id}-to-target`,
+            source: id,
+            target: target,
+            type: "smoothstep",
+            animated: true,
+            style: {
+              stroke: "url(#gradient-dynamic)",
+              strokeWidth: 2.2,
+              filter: "drop-shadow(0 0 6px rgba(59,252,255,0.45))",
+            },
+          },
+          withFirstEdge,
+        );
+      });
     },
     [activeMode, nodes, pickNear, setEdges, setNodes, targetForMode],
   );
@@ -447,42 +447,48 @@ export function CanvasBoard() {
     <div className="relative flex h-[700px] w-full flex-col overflow-hidden rounded-[2.25rem] border border-white/40 bg-white/80 text-slate-900 shadow-[0_45px_120px_rgba(59,252,255,0.19)] backdrop-blur-3xl dark:border-cyan-500/25 dark:bg-slate-950/60 dark:text-cyan-50">
       <Toolbar toolbarIcons={toolbarIcons} onAction={handleToolbarAction} />
       <div className="relative flex-1">
-        <ReactFlow
-          nodes={nodes}
-          edges={edges}
-          onNodesChange={onNodesChange}
-          onEdgesChange={onEdgesChange}
-          onConnect={handleConnect}
-          onInit={(instance) => {
-            requestAnimationFrame(() => {
-              instance.fitView({ padding: 0.3, duration: 800 });
-            });
-          }}
-          fitView
-          minZoom={0.4}
-          maxZoom={1.8}
-          snapToGrid
-          snapGrid={[20, 20]}
-          attributionPosition="bottom-left"
-          nodeTypes={nodeTypes}
-          proOptions={{ hideAttribution: true }}
-          className="react-flow-canvas"
-        >
-          <Defs />
-          <Background color="rgba(148,163,184,0.25)" gap={32} size={0.5} />
-          <MiniMap
-            pannable
-            zoomable
-            nodeColor={() => "#5ff3ff"}
-            maskColor="rgba(15,23,42,0.6)"
-            className="!bg-slate-900/60 !text-cyan-100/50"
-          />
-          <Controls
-            position="bottom-right"
-            showInteractive={false}
-            className="!bg-white/10 !border-white/20 !text-white"
-          />
-        </ReactFlow>
+        {isClient ? (
+          <ReactFlow
+            nodes={nodes}
+            edges={edges}
+            onNodesChange={onNodesChange}
+            onEdgesChange={onEdgesChange}
+            onConnect={handleConnect}
+            onInit={(instance) => {
+              requestAnimationFrame(() => {
+                instance.fitView({ padding: 0.3, duration: 800 });
+              });
+            }}
+            fitView
+            minZoom={0.4}
+            maxZoom={1.8}
+            snapToGrid
+            snapGrid={[20, 20]}
+            attributionPosition="bottom-left"
+            nodeTypes={nodeTypes}
+            proOptions={{ hideAttribution: true }}
+            className="react-flow-canvas"
+          >
+            <Defs />
+            <Background color="rgba(148,163,184,0.25)" gap={32} size={0.5} />
+            <MiniMap
+              pannable
+              zoomable
+              nodeColor={() => "#5ff3ff"}
+              maskColor="rgba(15,23,42,0.6)"
+              className="!bg-slate-900/60 !text-cyan-100/50"
+            />
+            <Controls
+              position="bottom-right"
+              showInteractive={false}
+              className="!bg-white/10 !border-white/20 !text-white"
+            />
+          </ReactFlow>
+        ) : (
+          <div className="flex h-full items-center justify-center text-cyan-100/60">
+            Loading canvas...
+          </div>
+        )}
         <ModeBadge activeMode={activeMode} />
       </div>
       <InputDock onSubmit={handleSubmitPrompt} onUpload={handleUploadFiles} />
