@@ -47,21 +47,6 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
-        aurora: {
-          cyan: "hsl(var(--aurora-cyan))",
-          violet: "hsl(var(--aurora-violet))",
-          magenta: "hsl(var(--aurora-magenta))",
-        },
       },
       fontFamily: {
         sans: [
@@ -72,16 +57,6 @@ export default {
           "Segoe UI",
           "sans-serif",
         ],
-        heading: ["Orbitron", "Inter", "system-ui", "sans-serif"],
-        orbitron: ["Orbitron", "sans-serif"],
-      },
-      boxShadow: {
-        glow: "0 0 45px rgba(59,252,255,0.35)",
-        "glow-purple": "0 0 55px rgba(140,75,255,0.35)",
-      },
-      backgroundImage: {
-        nebula:
-          "radial-gradient(circle at 20% 20%, rgba(59,252,255,0.18), transparent 60%), radial-gradient(circle at 80% 0%, rgba(140,75,255,0.22), transparent 65%)",
       },
       borderRadius: {
         lg: "var(--radius)",

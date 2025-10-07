@@ -1,18 +1,42 @@
-import React from "react";
-import ChatArea from "@/components/chat/ChatArea";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable";
+import { CanvasBoard } from "@/components/canvas/CanvasBoard";
+import { ChatPanel } from "@/components/chat/ChatPanel";
+import { useAppStore } from "@/store/useAppStore";
 
 export default function Chat() {
+  const { id } = useParams<{ id: string }>();
+  const resetBoard = useAppStore((s) => s.resetBoard);
+
+  useEffect(() => {
+    // When entering a new chat, reset the canvas to its initial state.
+    // In a real app, you'd load the session data based on the `id`.
+    if (id?.startsWith("session_")) {
+      console.log("Starting new session, resetting board.");
+      resetBoard();
+    } else {
+      console.log(`Loading existing session: ${id}`);
+      // Here you would fetch and load the state for the given session id.
+      // For now, it will just use the existing state in the store.
+    }
+  }, [id, resetBoard]);
+
   return (
-    <div className="flex h-full flex-col gap-6">
-      <header className="space-y-1">
-        <h2 className="text-2xl font-bold text-white">Chat</h2>
-        <p className="text-sm text-cyan-100/80">
-          Ask Shunya anything — instant AI chat placeholder.
-        </p>
-      </header>
-      <main className="flex h-full">
-        <ChatArea />
-      </main>
+    <div className="h-full w-full">
+      <ResizablePanelGroup direction="horizontal" className="h-full w-full">
+        <ResizablePanel defaultSize={75}>
+          <CanvasBoard />
+        </ResizablePanel>
+        <ResizableHandle withHandle />
+        <ResizablePanel defaultSize={25} minSize={20} maxSize={40}>
+          <ChatPanel />
+        </ResizablePanel>
+      </ResizablePanelGroup>
     </div>
   );
 }

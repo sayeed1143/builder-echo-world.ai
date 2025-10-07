@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => ({
     allowedHosts: true,
     fs: {
       allow: [
+        __dirname, // Allow project root
         path.resolve(__dirname, "client"),
         path.resolve(__dirname, "shared"),
         path.resolve(__dirname, "node_modules"),
