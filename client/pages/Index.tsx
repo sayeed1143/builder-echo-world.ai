@@ -14,15 +14,18 @@ import { CanvasBoard } from "@/components/canvas/CanvasBoard";
 const heroHighlights = [
   {
     title: "Multi-modal Intelligence",
-    description: "Fuse text, visuals, audio, and assessments into one living workspace.",
+    description:
+      "Fuse text, visuals, audio, and assessments into one living workspace.",
   },
   {
     title: "Adaptive Mastery",
-    description: "Infinite mock exams calibrate instantly to your strengths and blind spots.",
+    description:
+      "Infinite mock exams calibrate instantly to your strengths and blind spots.",
   },
   {
     title: "24/7 Mentorship",
-    description: "DoubtBusterAI delivers step-wise explanations, alternate methods, and practice twins on demand.",
+    description:
+      "DoubtBusterAI delivers step-wise explanations, alternate methods, and practice twins on demand.",
   },
 ];
 
@@ -31,7 +34,8 @@ const modules = [
     name: "StudyCanvas AI",
     icon: Layers3,
     pain: "Students lose track of sources while doing research.",
-    solution: "Shunya AI weaves every PDF, link, and lecture into a cohesive, citation-ready canvas.",
+    solution:
+      "Shunya AI weaves every PDF, link, and lecture into a cohesive, citation-ready canvas.",
     features: [
       "Upload PDFs, embed YouTube lectures, and paste links",
       "AI extracts themes, citations, and connected insights",
@@ -49,7 +53,8 @@ const modules = [
     name: "InfiniteMockAI",
     icon: BrainCircuit,
     pain: "Limited practice tests and high cost block deeper mastery.",
-    solution: "Generate endless, adaptive mock exams that mirror real test blueprints and accelerate improvement.",
+    solution:
+      "Generate endless, adaptive mock exams that mirror real test blueprints and accelerate improvement.",
     features: [
       "Choose JEE, NEET, GATE, CAT, and more with authentic patterns",
       "Auto-generated solutions with narrated steps",
@@ -67,7 +72,8 @@ const modules = [
     name: "DoubtBusterAI",
     icon: Workflow,
     pain: "Learners waste hours waiting for support or clarity.",
-    solution: "Snap, speak, or type a problem—Shunya responds instantly with multi-format clarity and practice twins.",
+    solution:
+      "Snap, speak, or type a problem—Shunya responds instantly with multi-format clarity and practice twins.",
     features: [
       "OCR for handwritten notes and textbook captures",
       "Multiple solving methods with step-by-step narration",
@@ -88,7 +94,11 @@ const pricing = [
     plan: "Free",
     price: "₹0",
     description: "5 uploads or 10 doubts each month to begin your journey.",
-    perks: ["Mindful Canvas glimpse", "DoubtBusterAI snapshots", "Weekly progress pulse"],
+    perks: [
+      "Mindful Canvas glimpse",
+      "DoubtBusterAI snapshots",
+      "Weekly progress pulse",
+    ],
   },
   {
     plan: "Student Pro",
@@ -103,14 +113,23 @@ const pricing = [
   {
     plan: "Ultimate",
     price: "₹999/mo",
-    description: "Unlock voice tutors, multi-device sync, and pro-grade exports.",
-    perks: ["Immersive voice tutor", "Advanced visualization packs", "Real-time collaboration"],
+    description:
+      "Unlock voice tutors, multi-device sync, and pro-grade exports.",
+    perks: [
+      "Immersive voice tutor",
+      "Advanced visualization packs",
+      "Real-time collaboration",
+    ],
   },
   {
     plan: "Institution",
     price: "Talk to us",
     description: "Campus-wide licenses with admin dashboards and integrations.",
-    perks: ["SSO and LMS integration", "Dedicated AI lab spaces", "White-glove onboarding"],
+    perks: [
+      "SSO and LMS integration",
+      "Dedicated AI lab spaces",
+      "White-glove onboarding",
+    ],
   },
 ];
 
@@ -148,7 +167,10 @@ function Hero() {
             Shunya AI: The Infinite Learning Intelligence
           </h2>
           <p className="text-lg leading-relaxed text-cyan-100/80 sm:text-xl">
-            A futuristic, mindful learning space that merges visual research, adaptive testing, and instant doubt solving into one infinite intelligence. Built for students, teachers, explorers, and the campuses of tomorrow.
+            A futuristic, mindful learning space that merges visual research,
+            adaptive testing, and instant doubt solving into one infinite
+            intelligence. Built for students, teachers, explorers, and the
+            campuses of tomorrow.
           </p>
           <div className="flex flex-wrap gap-4 text-sm uppercase tracking-[0.35em] text-cyan-100/80">
             <span className="rounded-full border border-cyan-300/60 bg-cyan-500/20 px-4 py-2">
@@ -196,7 +218,9 @@ function FeatureMatrix() {
           Mindful Modules, Infinite Outcomes
         </h3>
         <p className="max-w-3xl text-lg text-cyan-100/80">
-          Shunya AI synchronizes research canvases, adaptive mock exams, and always-on mentorship. Each module interlinks through the multi-panel canvas, keeping curiosity, practice, and clarity in flow.
+          Shunya AI synchronizes research canvases, adaptive mock exams, and
+          always-on mentorship. Each module interlinks through the multi-panel
+          canvas, keeping curiosity, practice, and clarity in flow.
         </p>
       </motion.div>
       <div className="grid gap-6 xl:grid-cols-3">
@@ -273,7 +297,9 @@ function PricingSection() {
           Choose Your Journey
         </h3>
         <p className="max-w-3xl text-lg text-cyan-100/80">
-          Begin for free, grow with Student Pro or Ultimate, or activate institution-wide mastery. Every plan is Vercel-ready, AI-native, and expansion-friendly with Supabase and Firebase integrations.
+          Begin for free, grow with Student Pro or Ultimate, or activate
+          institution-wide mastery. Every plan is Vercel-ready, AI-native, and
+          expansion-friendly with Supabase and Firebase integrations.
         </p>
       </motion.div>
       <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-4">

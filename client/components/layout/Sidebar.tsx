@@ -29,28 +29,32 @@ const moduleCards: Array<{
   {
     mode: "StudyCanvas AI",
     title: "Visual Research Workspace",
-    description: "Connect sources, generate citations, and map knowledge effortlessly.",
+    description:
+      "Connect sources, generate citations, and map knowledge effortlessly.",
     icon: NotebookPen,
     accent: "from-cyan-300/80 via-sky-400/70 to-blue-500/60",
   },
   {
     mode: "InfiniteMockAI",
     title: "Adaptive Mock Tests",
-    description: "Craft personalized exams with instant analytics and smart remediation.",
+    description:
+      "Craft personalized exams with instant analytics and smart remediation.",
     icon: LineChart,
     accent: "from-indigo-400/80 via-violet-500/70 to-purple-500/60",
   },
   {
     mode: "DoubtBusterAI",
     title: "Instant Doubt Solver",
-    description: "Upload, ask, and receive multi-step explanations with alternate methods.",
+    description:
+      "Upload, ask, and receive multi-step explanations with alternate methods.",
     icon: BrainCircuit,
     accent: "from-purple-400/80 via-fuchsia-500/70 to-pink-500/60",
   },
   {
     mode: "AI Feature Modules",
     title: "Modular Intelligence",
-    description: "Plug-in voice tutors, vision OCR, and knowledge expansions instantly.",
+    description:
+      "Plug-in voice tutors, vision OCR, and knowledge expansions instantly.",
     icon: Bot,
     accent: "from-teal-400/80 via-emerald-400/70 to-cyan-400/60",
   },
@@ -186,7 +190,11 @@ type ModulesSectionProps = {
   sessions: Session[];
 };
 
-function ModulesSection({ activeMode, setActiveMode, sessions }: ModulesSectionProps) {
+function ModulesSection({
+  activeMode,
+  setActiveMode,
+  sessions,
+}: ModulesSectionProps) {
   return (
     <div className="flex flex-1 flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-2xl dark:border-cyan-500/25 dark:bg-cyan-900/40">
       <div className="border-b border-white/10 px-5 py-4 dark:border-cyan-500/20">
@@ -279,7 +287,9 @@ function ModulesSection({ activeMode, setActiveMode, sessions }: ModulesSectionP
                   {session.mode}
                 </p>
               </div>
-              <div className="text-[12px] text-cyan-100/60">{session.timestamp}</div>
+              <div className="text-[12px] text-cyan-100/60">
+                {session.timestamp}
+              </div>
             </motion.div>
           ))}
         </div>

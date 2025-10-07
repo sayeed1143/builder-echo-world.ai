@@ -220,7 +220,9 @@ function AiNode({ data }: NodeProps<AiNodeData>) {
         <p className="text-lg font-semibold leading-tight text-slate-900 drop-shadow-[0_0_30px_rgba(59,252,255,0.3)] dark:text-white">
           {data.title}
         </p>
-        <p className="text-sm text-cyan-800/75 dark:text-cyan-100/80">{data.subtitle}</p>
+        <p className="text-sm text-cyan-800/75 dark:text-cyan-100/80">
+          {data.subtitle}
+        </p>
       </div>
     </motion.div>
   );

@@ -1,7 +1,11 @@
 import { create } from "zustand";
 
 type Role = "Student" | "College" | "Teacher" | "Explorer";
-type StudyMode = "StudyCanvas AI" | "InfiniteMockAI" | "DoubtBusterAI" | "AI Feature Modules";
+type StudyMode =
+  | "StudyCanvas AI"
+  | "InfiniteMockAI"
+  | "DoubtBusterAI"
+  | "AI Feature Modules";
 
 type ToolbarAction =
   | "Visualize"

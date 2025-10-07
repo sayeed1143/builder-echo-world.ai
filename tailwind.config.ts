@@ -64,7 +64,14 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        sans: [
+          "Inter",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "sans-serif",
+        ],
         heading: ["Orbitron", "Inter", "system-ui", "sans-serif"],
         orbitron: ["Orbitron", "sans-serif"],
       },
@@ -73,7 +80,8 @@ export default {
         "glow-purple": "0 0 55px rgba(140,75,255,0.35)",
       },
       backgroundImage: {
-        nebula: "radial-gradient(circle at 20% 20%, rgba(59,252,255,0.18), transparent 60%), radial-gradient(circle at 80% 0%, rgba(140,75,255,0.22), transparent 65%)",
+        nebula:
+          "radial-gradient(circle at 20% 20%, rgba(59,252,255,0.18), transparent 60%), radial-gradient(circle at 80% 0%, rgba(140,75,255,0.22), transparent 65%)",
       },
       borderRadius: {
         lg: "var(--radius)",

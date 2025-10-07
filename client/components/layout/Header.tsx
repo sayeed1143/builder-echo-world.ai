@@ -74,9 +74,7 @@ function RoleSelector({ selectedRole, onSelect }: RoleSelectorProps) {
                   : "0 0 0 rgba(0,0,0,0)",
               }}
             />
-            <span className="relative z-10 mix-blend-lighten">
-              {role}
-            </span>
+            <span className="relative z-10 mix-blend-lighten">{role}</span>
           </motion.button>
         );
       })}

@@ -25,8 +25,8 @@ const NotFound = () => {
         </span>
         <h1 className="text-3xl font-semibold">Signal Lost</h1>
         <p className="text-sm text-cyan-100/80">
-          The coordinates you entered drift beyond Shunya’s infinite canvas. Let’s
-          guide you back to the learning nebula.
+          The coordinates you entered drift beyond Shunya’s infinite canvas.
+          Let’s guide you back to the learning nebula.
         </p>
         <Link
           to="/"
