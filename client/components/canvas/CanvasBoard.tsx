@@ -20,7 +20,7 @@ import {
   FileText,
   ImageIcon,
   Link2,
-  Microphone,
+  Mic,
   Paperclip,
   Send,
   Sparkles,
