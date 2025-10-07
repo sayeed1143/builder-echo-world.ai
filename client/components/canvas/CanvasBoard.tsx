@@ -183,7 +183,7 @@ const initialEdges: Edge[] = [
   },
 ];
 
-const mediaIcons: Record<AiNodeData["media"], React.ReactNode> = {
+const mediaIcons: Record<NonNullable<AiNodeData["media"]>, React.ReactNode> = {
   pdf: <FileText className="h-4 w-4" />,
   image: <ImageIcon className="h-4 w-4" />,
   video: <Youtube className="h-4 w-4" />,
