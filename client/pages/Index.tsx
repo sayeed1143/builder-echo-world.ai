@@ -3,7 +3,6 @@ import {
   ArrowRight,
   BarChart3,
   BrainCircuit,
-  FileStack,
   Layers3,
   ShieldCheck,
   Sparkle,
