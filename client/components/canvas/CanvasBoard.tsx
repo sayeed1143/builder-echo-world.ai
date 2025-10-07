@@ -20,7 +20,7 @@ import {
   FileText,
   ImageIcon,
   Link2,
-  Microphone,
+  Mic,
   Paperclip,
   Send,
   Sparkles,
@@ -568,7 +568,7 @@ function InputDock({
           className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-cyan-100/90"
           title="Voice input"
         >
-          <Microphone className="h-4 w-4" />
+          <Mic className="h-4 w-4" />
         </button>
         <input
           className="flex-1 bg-transparent text-sm font-medium text-white placeholder:text-cyan-100/60 focus:outline-none"
