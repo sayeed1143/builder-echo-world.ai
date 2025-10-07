@@ -57,6 +57,23 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        aurora: {
+          cyan: "hsl(var(--aurora-cyan))",
+          violet: "hsl(var(--aurora-violet))",
+          magenta: "hsl(var(--aurora-magenta))",
+        },
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        heading: ["Orbitron", "Inter", "system-ui", "sans-serif"],
+        orbitron: ["Orbitron", "sans-serif"],
+      },
+      boxShadow: {
+        glow: "0 0 45px rgba(59,252,255,0.35)",
+        "glow-purple": "0 0 55px rgba(140,75,255,0.35)",
+      },
+      backgroundImage: {
+        nebula: "radial-gradient(circle at 20% 20%, rgba(59,252,255,0.18), transparent 60%), radial-gradient(circle at 80% 0%, rgba(140,75,255,0.22), transparent 65%)",
       },
       borderRadius: {
         lg: "var(--radius)",
