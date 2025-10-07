@@ -16,7 +16,7 @@ export function MainLayout() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex-1 rounded-3xl border border-white/40 bg-white/70 p-4 shadow-[0_35px_80px_rgba(59,252,255,0.15)] backdrop-blur-3xl sm:p-6 dark:border-cyan-500/25 dark:bg-white/5"
+            className="flex-1 rounded-3xl border border-white/40 bg-white/70 p-4 shadow-[0_35px_80px_rgba(59,252,255,0.15)] backdrop-blur-3xl sm:p-6 dark:border-cyan-500/25 dark:bg-slate-950/60"
           >
             <Outlet />
           </motion.main>
