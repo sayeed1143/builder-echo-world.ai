@@ -157,8 +157,12 @@ export function Sidebar() {
               />
               <shortcut.icon className="relative z-10 mt-1 h-6 w-6 text-cyan-100" />
               <div className="relative z-10 space-y-1">
-                <p className="text-sm font-semibold text-white">{shortcut.title}</p>
-                <p className="text-xs text-cyan-100/70">{shortcut.action}</p>
+                <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                  {shortcut.title}
+                </p>
+                <p className="text-xs text-slate-700/80 dark:text-cyan-100/70">
+                  {shortcut.action}
+                </p>
               </div>
             </motion.button>
           ))}
@@ -223,12 +227,12 @@ function ModulesSection({ activeMode, setActiveMode, sessions }: ModulesSectionP
                   }}
                 />
                 <div className="relative z-10 flex items-start gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white shadow-[0_0_20px_rgba(59,252,255,0.35)]">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/70 text-slate-900 shadow-[0_0_20px_rgba(59,252,255,0.35)] dark:bg-white/10 dark:text-white">
                     <Icon className="h-5 w-5" />
                   </span>
                   <div className="space-y-2">
                     <div className="flex items-center justify-between gap-2">
-                      <p className="text-base font-semibold text-white">
+                      <p className="text-base font-semibold text-slate-900 dark:text-white">
                         {module.mode}
                       </p>
                       {isActive ? (
@@ -237,7 +241,7 @@ function ModulesSection({ activeMode, setActiveMode, sessions }: ModulesSectionP
                           initial={{ opacity: 0, y: 4 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -4 }}
-                          className="flex items-center gap-1 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.35em] text-white"
+                          className="flex items-center gap-1 rounded-full border border-white/30 bg-white/70 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.35em] text-slate-900 dark:border-white/20 dark:bg-white/10 dark:text-white"
                         >
                           Active
                         </motion.span>
@@ -265,10 +269,12 @@ function ModulesSection({ activeMode, setActiveMode, sessions }: ModulesSectionP
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="flex items-center justify-between rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-xs text-white/80 dark:border-cyan-500/25 dark:bg-cyan-900/50"
+              className="flex items-center justify-between rounded-xl border border-white/30 bg-white/70 px-4 py-3 text-xs text-slate-800/85 dark:border-cyan-500/25 dark:bg-cyan-900/50 dark:text-cyan-100/80"
             >
               <div>
-                <p className="font-semibold text-white">{session.title}</p>
+                <p className="font-semibold text-slate-900 dark:text-white">
+                  {session.title}
+                </p>
                 <p className="text-[10px] uppercase tracking-[0.3em] text-cyan-100/70">
                   {session.mode}
                 </p>
@@ -281,7 +287,7 @@ function ModulesSection({ activeMode, setActiveMode, sessions }: ModulesSectionP
           type="button"
           whileHover={{ scale: 1.01 }}
           whileTap={{ scale: 0.97 }}
-          className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/70 hover:text-cyan-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/80 dark:border-cyan-500/30 dark:bg-cyan-900/40"
+          className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/70 px-4 py-3 text-sm font-semibold text-slate-900 transition hover:border-cyan-300/70 hover:text-cyan-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/80 dark:border-cyan-500/30 dark:bg-cyan-900/40 dark:text-cyan-50"
         >
           <Sparkle className="h-4 w-4" />
           Start New Session
