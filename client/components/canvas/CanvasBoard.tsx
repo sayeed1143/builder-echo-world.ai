@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import ReactFlow, {
   Background,
   Controls,
@@ -16,6 +16,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   Bot,
   Brain,
+  BookOpenCheck,
   FileText,
   ImageIcon,
   Link2,
@@ -227,11 +228,8 @@ function AiNode({ data }: NodeProps<AiNodeData>) {
 
 export function CanvasBoard() {
   const { activeMode, setToolbarAction } = useAppStore();
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [nodes, , onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-  const [reactFlowInstance, setReactFlowInstance] = useState<ReactFlow | null>(
-    null,
-  );
 
   const handleConnect: OnConnect = (params) =>
     setEdges((eds) =>
@@ -276,7 +274,6 @@ export function CanvasBoard() {
           onEdgesChange={onEdgesChange}
           onConnect={handleConnect}
           onInit={(instance) => {
-            setReactFlowInstance(instance as unknown as ReactFlow);
             requestAnimationFrame(() => {
               instance.fitView({ padding: 0.3, duration: 800 });
             });
